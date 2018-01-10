@@ -7,29 +7,60 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Print My Name</h1>
-  <div style="text-align: left; margin-left: 50px" id="printName"></div>
+  <div style="margin-left: 100px;">
+    <h1>Print My Name</h1>
+    <label for="firstName">First Name</label> <br> 
+    <input type="text" id="firstName" /> <br>
+    <label for="lastName">Last Name</label> <br> 
+    <input type="text" id="lastName"/> <br> <br>
+    <button onclick="printMyName()">Print Name !</button>
+    <div style="text-align: left; margin-left: 50px" id="printName"></div>
+  </div>
   <script>
-    const firstName = 'fahmi';
-    const lastName = 'irfan';
-    let print = '';
-    for (let i = 1; i <= 100; i++) {
-      if(i%3 === 0 && i%5 === 0) {
-        // console.log(i + firstName +' ' + lastName);
-        print += `<p>${i} ${firstName} ${lastName}</p>`
-      }
-      else {
-        if(i%3 === 0) {
-          // console.log(i + firstName);
-        print += `<p>${i} ${firstName}</p>`
-        } 
-        if(i%5 === 0) {
-          // console.log(i + lastName);
-          print += `<p>${i} ${lastName}</p>`
+    const printMyName = () => {
+      const firstName = document.getElementById("firstName").value;
+      console.log(firstName);
+      const lastName = document.getElementById("lastName").value;
+
+      let print = '';
+      for (let i = 1; i <= 100; i++) {
+        if(i%3 === 0 && i%5 === 0) {
+          // console.log(i + firstName +' ' + lastName);
+          print += `<p>${i} ${firstName} ${lastName}</p>`
         }
+        else {
+          if(i%3 === 0) {
+            // console.log(i + firstName);
+          print += `<p>${i} ${firstName}</p>`
+          } 
+          if(i%5 === 0) {
+            // console.log(i + lastName);
+            print += `<p>${i} ${lastName}</p>`
+          }
+        }
+        document.getElementById("printName").innerHTML = print;
       }
-      document.getElementById("printName").innerHTML = print;
     }
+    // const firstName = 'fahmi';
+    // const lastName = 'irfan';
+    // let print = '';
+    // for (let i = 1; i <= 100; i++) {
+    //   if(i%3 === 0 && i%5 === 0) {
+    //     // console.log(i + firstName +' ' + lastName);
+    //     print += `<p>${i} ${firstName} ${lastName}</p>`
+    //   }
+    //   else {
+    //     if(i%3 === 0) {
+    //       // console.log(i + firstName);
+    //     print += `<p>${i} ${firstName}</p>`
+    //     } 
+    //     if(i%5 === 0) {
+    //       // console.log(i + lastName);
+    //       print += `<p>${i} ${lastName}</p>`
+    //     }
+    //   }
+    //   document.getElementById("printName").innerHTML = print;
+    // }
   </script>
 </body>
 </html>
