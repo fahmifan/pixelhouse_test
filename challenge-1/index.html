@@ -24,19 +24,19 @@
 
       let print = '';
       for (let i = 1; i <= 100; i++) {
-        print += i + `<br/>`;
+        print += `<br />` + i ;
         if(i%3 === 0 && i%5 === 0) {
           // console.log(i + firstName +' ' + lastName);
-          print += `<p>${firstName} ${lastName}</p>`
+          print += `${firstName} ${lastName}`
         }
         else {
           if(i%3 === 0) {
             // console.log(i + firstName);
-          print += `<p>${firstName}</p>`
+          print += `${firstName}`
           } 
           if(i%5 === 0) {
             // console.log(i + lastName);
-            print += `<p>${lastName}</p>`
+            print += `${lastName}`
           }
         }
         document.getElementById("printName").innerHTML = print;
